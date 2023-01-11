@@ -3,11 +3,13 @@ const express = require('express');
 // require / hookup db
 
 //const userController = require(path.resolve(__dirname, './controllers/userController'));
-
+//import cors
+// app.user(cors)
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 const accountRouter = require(path.resolve(__dirname, './routes/accountRouter.js'))
+const gameRouter = require(path.resolve(__dirname, './routes/accountRouter.js'))
 
 app.use(express.json());
 
@@ -27,12 +29,15 @@ app.use(express.json());
     // player1Move: default true;
 // once the user is signed in
 
-
-
 app.use('/account', accountRouter);
 
 
 app.use('/game', gameRouter);
+
+app.use((req, res) => {
+  console.log(req.originalUrl)
+  res.sendStatus(200);
+});
 
 app.use((req, res) => {
   res.status(404).send("file not found");
@@ -44,6 +49,6 @@ app.use((err, req, res, next) => {
 })
 
 
-module.exports = app.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`)
 });

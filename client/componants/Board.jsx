@@ -14,6 +14,7 @@ const Board = (props) => {
       <Row />
       <Row />
       <Row />
+
     </div>
   )
 }

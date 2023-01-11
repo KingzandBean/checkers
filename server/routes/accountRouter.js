@@ -14,6 +14,7 @@ router.post('/signup',
 });
 
 router.get('/:username',
+  (req, res, next) => {console.log(req.params); next();},
   userController.findUser,
   (req, res) => {
   res.status(200).json(res.locals.username);
