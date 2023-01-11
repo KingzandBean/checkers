@@ -1,0 +1,14 @@
+.square {
+  border-style: solid;
+  border-width: medium;
+  border-color: black;
+  height: 100px;
+  width: 100px;
+}
+body {
+  background: lightblue;
+}
+
+.row {
+  display: flex;
+}
