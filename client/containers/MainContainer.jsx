@@ -6,7 +6,7 @@ const MainContainer = (props) => {
   const display = [];
   //if (!props.isLoggedIn) display.push(<SignIn />)
   //else {
-    display.push(<AccountContainer />)
+    display.push(<AccountContainer key={1}/>)
   //}
   return (
     <div id="main-container">

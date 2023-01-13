@@ -1,6 +1,12 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+//http://localhost:8080/
+
+//http://localhost:8080/api/myroute
+
+// http://localhost:3000/myroute
+
 module.exports = {
   mode: 'development',
   entry: './client/index.js',

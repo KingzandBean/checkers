@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 const accountRouter = require(path.resolve(__dirname, './routes/accountRouter.js'))
-const gameRouter = require(path.resolve(__dirname, './routes/accountRouter.js'))
+const gameRouter = require(path.resolve(__dirname, './routes/gameRouter.js'))
 
 app.use(express.json());
 
@@ -35,14 +35,9 @@ app.use('/account', accountRouter);
 app.use('/game', gameRouter);
 
 app.use((req, res) => {
-  console.log(req.originalUrl)
-  res.sendStatus(200);
-});
-
-app.use((req, res) => {
+  console.log(req.path)
   res.status(404).send("file not found");
 });
-
 
 app.use((err, req, res, next) => {
   res.sendStatus(500);
